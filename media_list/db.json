@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Elsie Price",
+      "id": 3
+    },
+    {
+      "name": "Harold Strosin",
+      "id": 4
+    }
+  ],
+  "albums": [
+    {
+      "userId": 1,
+      "title": "Awesome Fresh Towels",
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "title": "Small Metal Gloves",
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "title": "Fantastic Soft Pants",
+      "id": 10
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/150?lock=6239403038998528",
+      "id": 124
+    },
+    {
+      "albumId": 8,
+      "url": "https://picsum.photos/seed/dHUdh/150/150",
+      "id": 129
+    },
+    {
+      "albumId": 8,
+      "url": "https://picsum.photos/seed/cYEQg/150/150",
+      "id": 131
+    },
+    {
+      "albumId": 8,
+      "url": "https://picsum.photos/seed/td6zaS/150/150",
+      "id": 133
+    },
+    {
+      "albumId": 9,
+      "url": "https://loremflickr.com/150/150?lock=6807415664148480",
+      "id": 134
+    },
+    {
+      "albumId": 10,
+      "url": "https://picsum.photos/seed/9rehiT/150/150",
+      "id": 135
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/150?lock=2288634560512000",
+      "id": 136
+    },
+    {
+      "albumId": 10,
+      "url": "https://picsum.photos/seed/gniGvpM8u/150/150",
+      "id": 137
+    }
+  ]
+}
