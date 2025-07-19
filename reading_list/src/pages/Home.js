@@ -1,19 +1,34 @@
-import { useState } from 'react'
-import BookList from '../components/BookList'
-import BookForm from '../components/BookForm'
+import { useState, useEffect } from "react";
+import BookList from "../components/BookList";
+import BookForm from "../components/BookForm";
+
+import { db } from "../firebase/config";
+
+import { collection, onSnapshot } from "firebase/firestore";
 
 export default function Home() {
-  const [books, setBooks] = useState([
-    { title: 'the name of the wind', id: 1 },
-    { title: 'the dragon reborn', id: 2 },
-    { title: 'the final empire', id: 3 },
-    { title: 'the way of kings', id: 4 }
-  ])
+	const [books, setBooks] = useState(null);
 
-  return (
-    <div className="App">
-      {books && <BookList books={books} />}
-      <BookForm />
-    </div>
-  );
+	useEffect(() => {
+		const unsub = onSnapshot(collection(db, "books"), (snapshot) => {
+			const booksData = [];
+			for (const doc of snapshot.docs) {
+				booksData.push({ id: doc.id, ...doc.data() });
+			}
+			setBooks(booksData);
+			console.log("Current books: ", booksData);
+		});
+
+		// Cleanup
+		return () => {
+			unsub();
+		};
+	}, []);
+
+	return (
+		<div className="App">
+			{books && <BookList books={books} />}
+			<BookForm />
+		</div>
+	);
 }
